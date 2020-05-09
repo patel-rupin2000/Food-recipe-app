@@ -7,6 +7,7 @@ import {withNavigation} from 'react-navigation';
 import AboutScreen2 from './newHome';
 
 function Search({navigation}) {
+
     const [term, setTerm]= useState('');
     return (
         <View >

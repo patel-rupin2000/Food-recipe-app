@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation-stack';
-import {View, Text,TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text,TouchableOpacity, StyleSheet,Icon,Image} from 'react-native';
 import Header from "./header";
 // import { createStackNavigator } from '@react-navigation/stack';
 import Show from './recipes';
@@ -43,6 +43,10 @@ const AboutStack = createStackNavigator({
   Home: {
     screen : Nav,
     navigationOptions: ({navigation}) => {
+      /*(
+        <Image source={require('./home-png-5.png')}
+        style={{height:24,width:24}}/>
+    )*/
       return { headerTitle: () => <Header navigation={navigation} title="Meals" />
     }}
   },

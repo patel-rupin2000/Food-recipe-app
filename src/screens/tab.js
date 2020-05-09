@@ -14,6 +14,7 @@ import Constants from 'expo-constants';
 import AboutScreen from './AboutScreen';
 
 function wait(timeout) {
+
   return new Promise(resolve => {
     setTimeout(resolve, timeout);
   });
@@ -27,6 +28,7 @@ function SettingsScreen() {
 
     wait(2000).then(() => setRefreshing(false));
   }, [refreshing]);
+
 
   return (
     <View style={{ flex: 1, marginTop: 10}}>
@@ -63,6 +65,7 @@ const styles = StyleSheet.create({
 const Tab = createBottomTabNavigator();
 
 function Nav() {
+
   return (
     <NavigationContainer>
       <Tab.Navigator>

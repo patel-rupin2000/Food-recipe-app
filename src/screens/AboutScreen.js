@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text,Button , Switch, StyleSheet} from 'react-native';
+import {View, Text,Button , Switch, StyleSheet, ShadowPropTypesIOS} from 'react-native';
 import NewHead from './stack2';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
@@ -9,14 +9,17 @@ import Filter from './components/filter';
 import AboutScreen2 from './newHome';
 import Header from "./header";
 import NewShow from './newrecipe';
+import Panel from 'react-native-panel';
+
 
 function AboutScreen({navigation}){
         var m='orange';
         return <View>
-            <NewHead title="Filter" />
-            {/* <Text style={{marginTop: 30}}>About Screen</Text> */}
+            <Text style={{marginTop: 30,fontSize:20,fontWeight:'bold',textDecorationLine: 'underline'}}>Filters</Text> 
             <AboutScreen2 />
+          
         </View>
+        
 };
 
 const styles = StyleSheet.create({
