@@ -14,15 +14,16 @@ import {Container,Body,Content} from 'native-base';
 
 const CustomDrawerContentComponent=(props)=>(
    
-  <Container>
+  <Container style={{}}>
   
-    <View style={{marginTop:50,alignSelf:'center',marginLeft:50}}>
-        <Image style={{height:150,width:150,borderRadius:750}} source={{uri:'https://i.dlpng.com/static/png/4674369-food-icon-food-court-icon-png-transparent-png-600x600-free-food-courts-in-malls-png-820_640_preview.png'}}/>
-        <AboutScreen />
+    <View style={{alignSelf:"center",backgroundColor:"#d11d4c",height:250,width:"100%"}}>
+        <Image style={{height:150,width:150,borderRadius:750,alignSelf:"center",marginTop:50}} source={{uri:'https://i.dlpng.com/static/png/4674369-food-icon-food-court-icon-png-transparent-png-600x600-free-food-courts-in-malls-png-820_640_preview.png'}}/>
+        
         
     </View>
 
     <Content>
+    <AboutScreen />
       <DrawerItems {...props}
       />
 

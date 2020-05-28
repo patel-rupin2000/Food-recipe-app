@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text,TouchableOpacity, Switch, StyleSheet,Panel} from 'react-native';
+import {View, Text,TouchableOpacity, Switch, StyleSheet} from 'react-native';
 import NewHead from './stack2';
 import { withNavigation} from 'react-navigation';
 import Filter from './components/filter';
@@ -32,50 +32,49 @@ function AboutScreen2({navigation}){
         // console.log(v);
 
         var m='orange';
-        return <View style={{ marginTop:10,left:'-40%'}}>
-                <View style={{flexDirection:'row',marginVertical:10}}>
-                <Text style={{fontSize:17}}>  Gluten Free </Text>
+        return <View>
+            {/* <Text style={{marginTop: 30}}>About Screen</Text> */}
+            <View style={{flexDirection: 'row', marginTop: 10}}>
+                
+                <Text> Gluten Free </Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled1 ? "#f5dd4b" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={toggleSwitch1}
                         value={isEnabled1}
-                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }],marginHorizontal:20}}
+                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal: 10 }}
                 />
-                </View>
-            <View  style={{flexDirection:'row',marginVertical:10}}>
-                <Text style={{fontSize:17}}>  Vegan              </Text>
+            
+                <Text>Vegan         </Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled2 ? "#f5dd4b" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={toggleSwitch2}
                         value={isEnabled2}
-                        style={{ transform: [{ scaleX:1.4 }, { scaleY: 1.2 }], marginHorizontal:10  }}
+                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal: 10  }}
                 />
             </View>
-            <View style={{ flexDirection:'row',marginVertical:10}}>
-                <Text style={{fontSize:17}}>  Vegetarian      </Text>
+            <View style={{flexDirection: 'row', marginTop: 10}}>
+                <Text> Vegetarian  </Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled3 ? "#f5dd4b" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={toggleSwitch3}
                         value={isEnabled3}
-                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal:10 }}
+                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal: 10  }}
                 />
-                </View>
-                <View style={{flexDirection:'row',marginVertical:10}}>
             
-                <Text style={{fontSize:17}}>  Lactose Free  </Text>
+                <Text>Lactose Free</Text>
                 <Switch
                         trackColor={{ false: "#767577", true: "#81b0ff" }}
                         thumbColor={isEnabled4 ? "#f5dd4b" : "#f4f3f4"}
                         ios_backgroundColor="#3e3e3e"
                         onValueChange={toggleSwitch4}
                         value={isEnabled4}
-                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal:10  }}
+                        style={{ transform: [{ scaleX: 1.4 }, { scaleY: 1.2 }], marginHorizontal: 10  }}
                 />
             </View>
             {/* <Text style ={{marginTop: 40}}>{isEnabled1 ? 'True 1' : 'False 1'} {isEnabled2 ? 'True 2' : 'False 2'} {isEnabled3 ? 'True 3 ' : 'False 3 '} 
@@ -83,7 +82,6 @@ function AboutScreen2({navigation}){
             </Text> */}
             {/* <Filter val1={isEnabled1} val2={isEnabled2} val3={isEnabled3} val4={isEnabled4} navigation={navigation} /> */}
         </View>
-        
 };
 
 export default withNavigation(AboutScreen2);

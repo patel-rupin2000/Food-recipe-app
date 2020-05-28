@@ -37,10 +37,11 @@ function Categ({navigation}){
       <TouchableOpacity onPress={()=> navigation.navigate('Results', {id: item.id})}>
            <View style={styles.img}>
             <Image source = {{uri:item.imageUrl}}
-                style = {{ width: "98%", height: 170, borderRadius: 10 }}
+                style = {{ width: "99.8%", height: 170, borderRadius: 10 }}
                 /></View>
         <View style={styles.content}>
-            <Text style={{color: 'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline'}}>{item.title}</Text>
+            <Text style={{color: 'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline',
+            textAlign: 'center', justifyContent: 'center', alignSelf: 'center' }}>{item.title}</Text>
             </View>
             </TouchableOpacity> 
          </View>
@@ -59,7 +60,7 @@ const styles=StyleSheet.create({
         borderRadius:10,
         marginHorizontal:10,
         alignSelf: 'center',
-        backgroundColor: 'black'
+        backgroundColor: '#FF9999'
     },
     content: {
         alignSelf: 'center',

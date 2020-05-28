@@ -6,15 +6,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Favorites1 from './components/favoriteslist';
 import {Entypo} from '@expo/vector-icons';
 import {FontAwesome} from '@expo/vector-icons';
+import {Ionicons} from '@expo/vector-icons';
 import {MaterialCommunityIcons} from '@expo/vector-icons';
 import Search from "./first";
 import Categories from './Categories';
 import FavoritesImage from './FavoriteScreen';
-import Constants from 'expo-constants';
-import AboutScreen from './AboutScreen';
 
 function wait(timeout) {
-
   return new Promise(resolve => {
     setTimeout(resolve, timeout);
   });
@@ -28,7 +26,6 @@ function SettingsScreen() {
 
     wait(2000).then(() => setRefreshing(false));
   }, [refreshing]);
-
 
   return (
     <View style={{ flex: 1, marginTop: 10}}>
@@ -51,11 +48,12 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // marginTop: Constants.statusBarHeight,
-    height: 100
+    height: 100,
+    // top: 40
   },
   scrollView: {
     flex: 1,
-    backgroundColor: 'pink',
+    // backgroundColor: 'pink',
     alignItems: 'center',
     justifyContent: 'center',
     height: 20
@@ -65,15 +63,38 @@ const styles = StyleSheet.create({
 const Tab = createBottomTabNavigator();
 
 function Nav() {
-
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+
+            if (route.name === 'Home') {
+              iconName = focused
+                ? 'ios-information-circle'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Categories') {
+              iconName = focused ? 'ios-list-box' : 'ios-list';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+        })}
+        tabBarOptions={{
+          activeTintColor: '#000000',
+          inactiveTintColor: '#000000',
+          activeBackgroundColor: '#d11d4c',
+          inactiveBackgroundColor: '#f0eded'
+        }}
+      >
       <Tab.Screen
-        name="Feedu"
+        name="Home"
         component={Search}
         options={{
           tabBarLabel: 'Home',
+          unmountOnBlur: true,
           tabBarIcon: () => (
             <MaterialCommunityIcons name="home" color='black' size={26} />
           ),
