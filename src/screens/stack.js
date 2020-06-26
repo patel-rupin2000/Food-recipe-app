@@ -13,6 +13,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import {Entypo} from '@expo/vector-icons';
 import Favorites1 from './components/favoriteslist';
 
+
 var m=-1;
 function Find({navigation, title}){
   const id= navigation.getParam('id');
@@ -29,6 +30,7 @@ function Find({navigation, title}){
         return i;
     };
     m=Helper(id);
+    var d=MEALS[m].title;
     i=1;
     function List(myVal){
         var position;
@@ -40,7 +42,12 @@ function Find({navigation, title}){
     }
     const showAlert = () =>{
       Alert.alert(
-         'Added to favorites'
+         'Added to favorites',
+         `${d}`,
+         [
+          { text: "OK",}
+         ],
+         { cancelable: false }
       )
    }
    showAlert();
@@ -48,7 +55,7 @@ function Find({navigation, title}){
 
 
   return <View style={{flexDirection: 'row', }}>
-          <Entypo name="star-outlined" style={{left: -1}} onPress={() => List(MEALS[m])} color='black' size={26} />
+          <Entypo name="star-outlined" style={{left: -1}} onPress={() => List(MEALS[m])} color='white' size={26} />
   </View>
 }
 
@@ -73,9 +80,25 @@ const AboutStack = createStackNavigator({
     screen: Item1,
   },
   Categories: {
-    screen: Categ,
+    screen: Categ, 
+ 
+    
   },
-});
+  },
+  {
+    initialRouteName: 'Home',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: '#d11d4c',
+      },
+      headerTintColor: 'white',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+        fontSize: 22,
+      },
+    },
+  }
+  );
 
 
 export default withNavigation(AboutStack);

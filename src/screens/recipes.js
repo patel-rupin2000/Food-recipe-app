@@ -43,7 +43,11 @@ function Show({navigation}){
             <FontAwesome name='dollar' size={20} style={{top: 4}} />
             <Text style={{fontSize:20}}> {MEALS[m].affordability}</Text>
             </View>
-            <View style={styles.low,{ right: '-32%', flexDirection: 'row', justifyContent: 'center', alignSelf:'center'}}>
+            <View style={styles.low,{
+                //  right: '-32%',
+                position: 'absolute',
+                right: '8.5%',
+                  flexDirection: 'row', justifyContent: 'center', alignSelf:'center'}}>
                 <Ionicons name='ios-timer' size={20} style={{top: 4}} />
             <Text style={{fontSize:20}}> {MEALS[m].duration} minutes</Text>
             </View>

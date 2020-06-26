@@ -6,10 +6,10 @@ import {withNavigation} from 'react-navigation';
 function NewHead({navigation, title}) {
     return (
         <View style={{ width: "100%", alignItems: 'center', height: 80, flexDirection: 'row',
-        backgroundColor:'#f5f5f5', paddingTop: 20, borderBottomWidth: 1, borderColor: 'gray'}} >
-            <Ionicons name="ios-menu" size={45} style={{left: 12}}
+        backgroundColor:"#d11d4c", paddingTop: 20, borderBottomWidth: 1, borderColor: 'gray'}} >
+            <Ionicons name="ios-menu" size={45} style={{left: 12,color:"white"}}
             onPress={() => navigation.openDrawer()}  />
-            <Text style={{marginLeft: "32%", fontSize: 28}}>{title}</Text>
+            <Text style={{marginLeft: "32%", fontSize: 28,color:"white"}}>{title}</Text>
         </View>
     )
 };

@@ -11,7 +11,6 @@ function Categ({navigation}){
     var j=0;
     var c=2;
     var list=[];
-    console.log("New");
     function Helper(id){
         for (i = 0; i < MEALS.length; i++) {
             var op=MEALS[i].categoryIds;
@@ -24,6 +23,7 @@ function Categ({navigation}){
         }
         return list;
     };
+
     m=Helper(cat);
     // console.log(m);
     return <View style={{ height: "100%", justifyContent: 'center'}}>
@@ -37,11 +37,12 @@ function Categ({navigation}){
       <TouchableOpacity onPress={()=> navigation.navigate('Results', {id: item.id})}>
            <View style={styles.img}>
             <Image source = {{uri:item.imageUrl}}
-                style = {{ width: "99.8%", height: 170, borderRadius: 10 }}
+                style = {{ width: "99.9%", height: 162, borderRadius: 15 }}
                 /></View>
         <View style={styles.content}>
-            <Text style={{color: 'white',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline',
+            <Text style={{color: 'black',fontWeight:'bold',fontSize:15,textDecorationLine: 'underline',
             textAlign: 'center', justifyContent: 'center', alignSelf: 'center' }}>{item.title}</Text>
+            
             </View>
             </TouchableOpacity> 
          </View>
@@ -55,12 +56,12 @@ const styles=StyleSheet.create({
         borderWidth: 1,
         borderColor: 'gray',
         marginBottom: 80,
-        height: 220,
+        height: 222,
         marginLeft: "5%",
-        borderRadius:10,
+        borderRadius:15,
         marginHorizontal:10,
         alignSelf: 'center',
-        backgroundColor: '#FF9999'
+        // backgroundColor: '#FF9999'
     },
     content: {
         alignSelf: 'center',

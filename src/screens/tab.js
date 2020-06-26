@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView,RefreshControl, SafeAreaView, StyleSheet } from 'react-native';
+import { Text, View, ScrollView,RefreshControl, SafeAreaView, StyleSheet, } from 'react-native';
 import { createStackNavigator } from 'react-navigation-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -28,7 +28,7 @@ function SettingsScreen() {
   }, [refreshing]);
 
   return (
-    <View style={{ flex: 1, marginTop: 10}}>
+    <View style={{ flex: 1,}}>
       <SafeAreaView style={styles.container}>
       <ScrollView
         contentContainerStyle={styles.scrollView}
@@ -36,7 +36,7 @@ function SettingsScreen() {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
       >
-        <Text>Pull down to see Refresh</Text>
+        <Text></Text>
       </ScrollView>
     </SafeAreaView>
       <FavoritesImage fav={Favorites1} />
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     // flex: 1,
     // marginTop: Constants.statusBarHeight,
-    height: 100,
+    height: 80,
     // top: 40
   },
   scrollView: {
@@ -63,6 +63,7 @@ const styles = StyleSheet.create({
 const Tab = createBottomTabNavigator();
 
 function Nav() {
+  var a='blue';
   return (
     <NavigationContainer>
       <Tab.Navigator
@@ -76,14 +77,15 @@ function Nav() {
                 : 'ios-information-circle-outline';
             } else if (route.name === 'Categories') {
               iconName = focused ? 'ios-list-box' : 'ios-list';
+              return <FontAwesome name="certificate" color='#99FF99' size={26} />
             }
 
             // You can return any component that you like here!
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Ionicons name={iconName} size={size} color={a} />;
           },
         })}
         tabBarOptions={{
-          activeTintColor: '#000000',
+          activeTintColor: '#99FF99',
           inactiveTintColor: '#000000',
           activeBackgroundColor: '#d11d4c',
           inactiveBackgroundColor: '#f0eded'

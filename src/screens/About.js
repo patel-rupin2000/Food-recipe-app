@@ -10,11 +10,11 @@ function About({navigation, backgroundColor1, name1, id}){
            <TouchableOpacity 
             onPress={()=> navigation.navigate('Categories', {id: `${p}`})} >
                 <View style={{
-                     width: 160,
+                     width: 155,
                      alignSelf: 'center',
                         height: 150,
                         backgroundColor: `${n}`,
-                        marginLeft: '8%',
+                        marginLeft: 21,
                         borderRadius: 10,
                 }} >
                 <Text style={styles.content}>{name1}</Text></View>
@@ -32,7 +32,7 @@ const styles=StyleSheet.create({
         textAlign: 'center',
         // left: 4,
         top: 50,
-        fontSize: 25,
+        fontSize: 22,
         width: '95%'
     },
 })
